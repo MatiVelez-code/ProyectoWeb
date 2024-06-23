@@ -1,0 +1,313 @@
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+    --colorprincipal: rgb(129, 162, 255);
+    --colorletra: black;
+    --colorsecundario: rgb(255, 255, 255);
+    --colorterciario: rgba(174, 217, 247, 0.534);
+    
+}
+.dark-mode{  /*Modo oscuro*/
+    --colorprincipal: rgb(0, 0, 0);
+    --colorletra: rgb(255, 255, 255);
+    --colorsecundario: rgb(114, 114, 114);
+    --colorterciario: rgba(170, 170, 170, 0.164);
+    --colorletrados: rgb(0, 0, 0);
+
+}
+body {
+    background-color: var(--colorprincipal);
+    margin: 8px 0;
+    
+}
+
+header, nav{
+    background-color: var(--colorprincipal);
+    border: 8px solid var(--colorsecundario)
+      
+}
+header {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-bottom: 0;
+    padding: 10px;
+    color: var(--colorletra);
+    border: 8px solid var(--colorsecundario)
+}
+.boton-navegacion{
+   background-color: var(--colorsecundario);
+   color: var(--colorletra);
+   margin-left: 10px;
+   height: 35px;
+}
+
+nav {
+    list-style: none;
+    display: none;
+    flex-direction: column; /*lista en vertical*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+nav.mostrar{
+    display: flex; /* clase que muestra o deja de msotrar el menu de navegacion a traves de js */
+}
+
+nav a {
+    text-decoration: none;
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--colorletra)
+}
+nav .cambiador-de-color{
+    border-radius: 5px;
+    margin: 1px 10px 1px 10px;   
+}
+nav :hover {
+    background-color: var(--colorterciario)
+}
+@media only screen and (min-width: 650px){
+    nav{
+        display: grid;
+        grid-template-columns:  30% 30% 30% 10%;
+        text-align: center;
+    }
+    
+    nav.mostrar{
+        display: grid;
+    }
+    .boton-navegacion{
+        display: none;
+    }
+    body{
+        margin: 8px;
+    }
+}
+.lista-clubes{
+    font-size: 1.5em;
+    margin-left: 5%;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: var(--colorletra);
+}
+@media only screen and (min-width: 650px){
+    .lista-clubes {
+      display: flex;
+            }
+    .clubes{
+        margin: 15px;
+        padding: 10px;
+    }
+}
+footer {
+    margin-top: 30px;
+    color: var(--colorletra);
+    text-align: center;
+}
+.texto-principal{
+    width: 90%;
+    margin: 30px auto;
+    background-color: var(--colorprincipal);
+    border: 8px solid var(--colorsecundario)
+}
+
+.texto-principal p{
+    text-align: justify;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1.3rem;
+    color: var(--colorletra);
+}
+.contenedor-suelo-y-viga, .contenedor-salto-y-paralelas {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: stretch;
+justify-content: space-around;
+}
+.contenedor-suelo-y-viga img, .contenedor-salto-y-paralelas img {
+    display: block;
+    margin: auto;
+}
+@media only screen and (min-width: 650px){
+    .contenedor-suelo-y-viga, .contenedor-salto-y-paralelas{
+        flex-direction: row;
+    }
+}
+h2 {
+    text-align: center;
+    color: var(--colorletra);
+}
+h2.titulo-formulario-calendario {
+    text-align: center;
+    color: var(--colorletra);
+}
+
+.contenedor-tabla {
+    display: flex;
+    justify-content: center;
+}
+article {/*contendor de los aparatos*/
+    background-color: var(--colorterciario);
+    border: 8px solid var(--colorsecundario);
+    width: 90%;
+    margin: 30px 10px 5px 10px;
+    padding: 10px;
+}
+
+table{ /*Calendario*/
+    width: 97%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 9px;
+    background-color:var(--colorterciario);
+    color: var(--colorletra);
+}
+
+th {
+    width: 100px;
+    height: 30px;
+    background-color: var(--colorsecundario);
+}
+tbody td {
+    width: 500px;
+}
+th, td, tr{
+    border: 2px solid black;
+    padding: 3px;
+}
+td.btn-editar-borrar{
+    width: 50px;;
+}
+@media only screen and (min-width: 650px) {
+    table{
+        font-size: 15px;
+        width: 80%;
+    }
+    th, td, tr{
+        padding: 10px;
+    }
+}
+.btn-tabla {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/*Formulario*/
+.contenedor-formularios {
+    display: flex;
+    justify-content: center;
+    color: var(--colorletra);
+}
+
+.color-input {
+    background-color: var(--colorsecundario);
+}
+.formularios {
+    background-color: var(--colorterciario);
+    width: 95%;
+    margin: 10px;
+    padding: 5px;
+}
+
+form{
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+    
+}
+.datos-personales div{
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-enviar{
+    margin-top: 10px;
+    width: 60px;
+    height: 30px;
+    background-color:var(--colorsecundario);
+    
+}
+.suma-captcha{
+    font-size:15px;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+}
+.filter{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2px   
+}
+ .filter input{
+    width: 40%;
+}
+#botonCaptcha{
+    background-color: var(--colorsecundario);
+}
+@media only screen and (min-width: 650px){
+    .formularios{
+        width: 40%;
+    }
+}
+
+/*Modo claro-oscuro*/
+
+.switch {
+    position: relative;
+    display: flex;
+    float: inline-end;
+    width: 60px;
+    height: 34px;
+    margin: 8px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorsecundario);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--colorletra);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+input:checked + .slider {
+    background-color: var(--colorsecundario);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
